@@ -7,7 +7,7 @@ from pygame.locals import *
 pygame.init()
 
 # Setup the game window.
-WindowSuface = pygame.display.set_mode((500,400),0,32)
+WindowSurface = pygame.display.set_mode((500,400),0,32)
 pygame.display,set_caption('Hello, world')
 
 # Setup color Values.
@@ -28,5 +28,5 @@ textRect.centerx = windowSurface.get_rect().centerx
 textRect.centery = windowSurface.get_rect().centery
 
 # Draw the game background
-windowSurface.fill(PINKISHPURPLE)
+WindowSurface.fill(PINKISHPURPLE)
 
