@@ -1,4 +1,4 @@
-# Simple Animation with Pygame, Lamar Camp, 1/10/22, 1:50PM, v0.6
+# Simple Animation with Pygame, Lamar Camp, 1/10/22, 1:50PM, v0.9
 
 import pygame, sys, time
 from pygame.locals import *
@@ -21,7 +21,7 @@ UPRIGHT = 'upright'
 MOVESPEED = 4
 
  #Setup color values.
- WHITE = (255, 255, 255)
+ WHITE = (255,255,255)
  RED = (255, 0, 0)
  GREEN = (0, 255, 0)
  BLUE = (0, 0, 255)
@@ -63,18 +63,34 @@ MOVESPEED = 4
                                b['dir'] = DOWNLEFT
                           if b['dir' ] == UPRIGHT:
                               b['dir'] = DOWNRIGHT
-                          if b['rect']. bottom > WINDOWHEIGHT:
-                              #The box has moved past the bottom.
-                            if b['dir'] == DOWNLEFT:
-                               b['dir'] =  UPLEFT
-                            if b['dir' ] == DOWNRIGHT:
-                              b['dir'] =    UPRIGHT
-                        if b['rect']. left < 0:
-                            # The box has moved past the left.
-                            if b ['dir'] == DOWNLEFT:
-                                b['dir'] = DOWNRIGHT
-                            if b ['dir'] == UPLEFT:
-                                b['dier'] = UPRIGHT
+                    if b['rect']. bottom > WINDOWHEIGHT:
+                        #The box has moved past the bottom.
+                        if b['dir'] == DOWNLEFT:
+                            b['dir'] =  UPLEFT
+                        if b['dir' ] == DOWNRIGHT:
+                            b['dir'] =    UPRIGHT
+                    if b['rect']. left < 0:
+                        # The box has moved past the left.
+                        if b ['dir'] == DOWNLEFT:
+                            b['dir'] = DOWNRIGHT
+                        if b ['dir'] == UPLEFT:
+                             b['dier'] = UPRIGHT
+                    if b['rect'].right > WINDOWWIDTH:
+                        # The box has moved past the right.
+                        if b['dir'] == DOWNRIGHT:
+                             b['dir'] = DOWNLEFT
+                        if b['dir'] == UPRIGHT:
+                            b['dir'] = UPLEFT
+
+                    # Draw the box onto the game surface.
+                    pygame.draw.rect(windowSurface, b['color'], b['rect'])
+
+                # Draw the window to the screen.
+                pygame.display.update()
+                time.sleep(0.02)
+
+
+                    
 
 
 
