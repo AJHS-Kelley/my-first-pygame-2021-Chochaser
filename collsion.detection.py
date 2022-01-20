@@ -1,4 +1,4 @@
-    # PyGame Collision Dection Practice, Lamar Camp, January 18, 2022 2:21pm, v0.5 unfinished
+    # PyGame Collision Dection Practice, Lamar Camp, January 18, 2022 2:23pm, v0.5
 
     import pygame, sys, random
     from pygame.locals import *
@@ -18,3 +18,19 @@
     GREEN= (0, 255, 0)
     WHITE =(255, 255, 255) 
 
+    # Setup the player and food data structures.
+    foodCounter = 0
+    NEWFOOD = 40
+    FOODSIZE = 20
+    player = pygame.Rect(300, 100, 50, 50)
+    foods = []
+
+for i in range(20):
+    foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE),random.randit(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
+
+# Movement Variables
+moveLeft = False
+moveRight = False
+moveUp = False
+moveDown = False
+MOVESPEED = 6
